@@ -1,45 +1,40 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Rikcat Adventures 3D (Mobile)</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Rikcat Adventures 3D</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div id="game-root">
-    <canvas id="c"></canvas>
 
-    <!-- HUD / Touch Controls -->
-    <div id="hud">
-      <div id="left-controls">
-        <button class="btn control" id="left-btn">◀</button>
-        <button class="btn control" id="right-btn">▶</button>
-      </div>
-      <div id="right-controls">
-        <button class="btn action" id="jump-btn">🚀</button>
-        <button class="btn action small" id="attack-btn">🔥</button>
-      </div>
+<!-- HUD SUPERIOR -->
+<div id="top-ui">
+  <button id="btn-rikcat">Rikcat</button>
+  <button id="btn-ilha">Ilha Inicial</button>
+</div>
 
-      <div id="topbar">
-        <div id="nick">Rikcat</div>
-        <div id="stage">Ilha Inicial</div>
-      </div>
-
-      <div id="emotes">
-        <button class="emote" data-emote="happy">☺</button>
-        <button class="emote" data-emote="sleepy">😴</button>
-        <button class="emote" data-emote="angry">😠</button>
-        <button class="emote" data-emote="surprised">😮</button>
-      </div>
-    </div>
-
-    <div id="overlay-message" class="hidden">Toque para começar</div>
+<!-- D-PAD -->
+<div id="dpad">
+  <button data-dir="forward">▲</button>
+  <div class="mid">
+    <button data-dir="left">◀</button>
+    <button data-dir="right">▶</button>
   </div>
+  <button data-dir="back">▼</button>
+</div>
 
-  <!-- three.js (UMD build) -->
-  <script src="https://unpkg.com/three@0.158.0/build/three.min.js"></script>
-  <!-- main game script -->
-  <script src="main.js"></script>
+<!-- EMOTES -->
+<div id="emotes">
+  <button>😃</button>
+  <button>😴</button>
+  <button>😠</button>
+  <button>😮</button>
+</div>
+
+<canvas id="game"></canvas>
+
+<script src="https://unpkg.com/three@0.158.0/build/three.min.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
