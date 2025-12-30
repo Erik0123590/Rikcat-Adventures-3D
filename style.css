@@ -1,48 +1,78 @@
-:root{
-  --bg:#BEEAF7;
-  --ui-bg: rgba(255,255,255,0.85);
-  --accent:#FFB000;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
-*{box-sizing:border-box}
-html,body,#game-root{height:100%;margin:0;padding:0}
-body{font-family:Inter, 시스템-ui, Arial, sans-serif;background:linear-gradient(180deg,var(--bg),#A6E6F2);}
-canvas{display:block;width:100%;height:100%;}
-#hud{position:absolute;inset:0;pointer-events:none}
-#left-controls{position:absolute;left:12px;bottom:20px;display:flex;gap:8px;pointer-events:auto}
-#right-controls{position:absolute;right:12px;bottom:20px;display:flex;flex-direction:column;gap:8px;pointer-events:auto}
-.btn{background:var(--ui-bg);border-radius:12px;padding:12px 14px;border:none;font-size:20px;box-shadow:0 6px 12px rgba(0,0,0,0.12);}
-.btn.small{padding:8px 10px;font-size:16px;border-radius:10px}
-.btn:active{transform:translateY(2px);}
-.control{min-width:56px;min-height:56px}
-.action{min-width:64px;min-height:64px}
-#topbar{position:absolute;left:12px;top:12px;display:flex;gap:12px;align-items:center;pointer-events:auto}
-#nick{background:var(--ui-bg);padding:6px 10px;border-radius:8px}
-#stage{background:var(--ui-bg);padding:6px 10px;border-radius:8px}
-#emotes{position:absolute;left:50%;transform:translateX(-50%);bottom:18px;display:flex;gap:8px;pointer-events:auto}
-.emote{background:var(--ui-bg);border-radius:8px;padding:8px 10px;border:none;font-size:18px}
-#overlay-message{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:rgba(0,0,0,0.6);color:white;padding:12px 18px;border-radius:10px;font-weight:600}
-.hidden{display:none}
 
-/* Small screens layout adjustments */
-@media (orientation:portrait){
-  #left-controls{left:8px;bottom:18px}
-  #right-controls{right:8px;bottom:18px}
+body {
+  overflow: hidden;
+  background: #000;
 }
-/* === FIX D-PAD VISIBILITY === */
-#left-controls.dpad {
-  position: absolute;
-  left: 12px;
+
+canvas {
+  display: block;
+}
+
+#top-ui {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+#top-ui button {
+  background: #222;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 12px;
+}
+
+#dpad {
+  position: fixed;
+  left: 15px;
   bottom: 20px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 6px;
-
-  pointer-events: auto;
+  z-index: 10;
 }
 
-#left-controls.dpad .middle {
+#dpad .mid {
   display: flex;
   gap: 6px;
+}
+
+#dpad button {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  border: none;
+  font-size: 22px;
+  background: rgba(0,0,0,0.7);
+  color: white;
+}
+
+#emotes {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+#emotes button {
+  width: 48px;
+  height: 48px;
+  font-size: 22px;
+  border-radius: 14px;
+  border: none;
+  background: rgba(0,0,0,0.7);
+  color: white;
 }
