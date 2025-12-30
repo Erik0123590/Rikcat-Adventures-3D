@@ -2,7 +2,7 @@
 
 ## Como jogar!
 Abra esse site! 👇
-erik.0123590.github.io/Rikcat-Adventures-3D
+erik0123590.github.io/Rikcat-Adventures-3D/
 
 ## Fatos
 Este repositório contém um protótipo leve em Three.js para ser hospedado em GitHub Pages
